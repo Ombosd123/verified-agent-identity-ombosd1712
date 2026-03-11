@@ -1,18 +1,16 @@
-YAML
-Salin kode
 name: Verify Human Identity
 
 on:
   workflow_dispatch:
     inputs:
       agent_name:
-        description: 'ombosd1712'
+        description: "ombosd1712"
         required: true
-        default: 'ombosd1712'
+        default: "ombosd1712"
       agent_description:
-        description: 'ombosd1712'
+        description: "ombosd1712 AI Agent"
         required: true
-        default: 'ombosd1712 AI Agent'
+        default: "ombosd1712 AI Agent"
 
 jobs:
   verify:
@@ -25,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Step 1 - Install ClawHub skill
         run: npx clawhub@latest install verified-agent-identity
