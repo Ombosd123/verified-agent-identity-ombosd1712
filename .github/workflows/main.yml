@@ -1,0 +1,29 @@
+name: Verify Human Identity
+
+on:
+  workflow_dispatch:
+    inputs:
+      agent_name:
+        description: 'ombosd1712'
+        required: true
+        default: 'ombosd1712'
+      agent_description:
+        description: 'ombosd1712'
+        required: true
+        default: 'ombosd1712 AI Agent'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Step 1 - Install ClawHub skill
+        run: npx --yes clawhub
