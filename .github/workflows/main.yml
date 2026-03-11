@@ -2,13 +2,19 @@ name: Verify Human Identity
 
 on:
   workflow_dispatch:
+    inputs:
+      agent_name:
+        description: 'ombosd1712'
+        required: true
+        default: 'ombosd1712'
+      agent_description:
+        description: 'ombosd1712'
+        required: true
+        default: 'ombosd1712 AI Agent'
 
 jobs:
   verify:
     runs-on: ubuntu-latest
-    env:
-      # Paksa actions pakai Node.js 24 jika mau, opsional
-      # FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout repo
